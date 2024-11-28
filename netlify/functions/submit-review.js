@@ -1,14 +1,15 @@
+const querystring = require('querystring');
 const mysql = require('mysql');
 
 exports.handler = async (event) => {
-  const data = JSON.parse(event.body);
+  const data = querystring.parse(event.body);
 
   const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
     database: "review",
-    port: "3307"
+    port: "3307",
   });
 
   return new Promise((resolve, reject) => {
@@ -26,6 +27,7 @@ exports.handler = async (event) => {
     );
   });
 };
+
 
 
 // Add spam filter?
