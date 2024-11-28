@@ -73,3 +73,7 @@ textarea {
     width: 15rem;
     height: 100px;
 }
+
+#submissionConfirmed {
+    display: "none";
+}
