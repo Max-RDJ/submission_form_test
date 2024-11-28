@@ -18,9 +18,16 @@ exports.handler = async (event) => {
       [data.firstName, data.lastName, data.review],
       (error, results) => {
         if (error) {
-          reject({ statusCode: 500, body: JSON.stringify(error) });
+            console.error("Db query error:", error);
+            reject({
+                statusCode: 500,
+                body: JSON.stringify(error)
+            });
         } else {
-          resolve({ statusCode: 200, body: "Review submitted successfully" });
+          resolve({
+            statusCode: 200,
+            body: "Review submitted successfully"
+        });
         }
         connection.end();
       }

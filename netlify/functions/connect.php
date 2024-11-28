@@ -3,8 +3,7 @@
     $lastName = $_POST['lastName'];
     $review = $_POST['review'];
 
-    // Database connection
-    $conn = new mysqli('localhost', 'root', '', 'review',"3307");
+    $conn = new mysqli('sql7.freesqldatabase.com', 'sql7748230', 'NdC6XG8Ly8', 'name_and_review', '3306');
     if($conn->connect_error) {
         die('Connection Failed : '.$conn->connect_erorr);
     } else {
@@ -12,8 +11,9 @@
             values(?, ?, ?)");
         $stmt->bind_param("sss", $firstName, $lastName, $review);
         $stmt->execute();
-        // echo $execval;
         echo "Review submitted";
         $stmt->close();
     }
 ?>
+
+<!-- Spam filter and retrieve db of other users once submitted -->
