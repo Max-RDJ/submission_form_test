@@ -2,7 +2,6 @@ const mysql = require('mysql');
 
 exports.handler = async (event) => {
   try {
-    // Parse the incoming JSON request body
     const { firstName, lastName, review } = JSON.parse(event.body);
 
     const connection = mysql.createConnection({
@@ -28,7 +27,6 @@ exports.handler = async (event) => {
       );
     });
   } catch (error) {
-    // Handle any errors (like invalid JSON)
     return {
       statusCode: 400,
       body: JSON.stringify({ error: "Invalid JSON format", details: error.message }),

@@ -22,7 +22,7 @@ Commit your code to a public github repo and supply this along with the demonstr
       <h2>Please enter your name and leave a comment</h2>
     </header>
 
-    <form id="reviewForm">
+    <form id="reviewForm" onSubmit="confirmSubmit()">
         <label for="firstName">First name:</label>
         <input
           type="text"
@@ -78,5 +78,7 @@ Commit your code to a public github repo and supply this along with the demonstr
         console.log(result);
       });
     </script>
+
+    <script src="index.js"></script>
   </body>
 </html>
