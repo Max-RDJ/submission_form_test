@@ -5,10 +5,10 @@ exports.handler = async (event) => {
   const data = querystring.parse(event.body);
 
   const connection = mysql.createConnection({
-    host: "http://sql7.freesqldatabase.com/",
+    host: "sql7.freesqldatabase.com",
     user: "sql7748230",
     password: "NdC6XG8Ly8",
-    database: "name_and_review",
+    database: "sql7748230",
     port: "3306",
   });
 
