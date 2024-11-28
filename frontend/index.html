@@ -25,6 +25,7 @@ Commit your code to a public github repo and supply this along with the demonstr
     <form id="reviewForm" onSubmit="confirmSubmit()">
         <label for="firstName">First name:</label>
         <input
+          required
           type="text"
           id="firstName"
           name="firstName"
@@ -34,6 +35,7 @@ Commit your code to a public github repo and supply this along with the demonstr
 
         <label for="lastName">Last name:</label>
         <input
+          required
           type="text"
           id="lastName"
           name="lastName"
@@ -43,6 +45,7 @@ Commit your code to a public github repo and supply this along with the demonstr
 
         <label for="review">Review:</label>
         <textarea
+          required
           type="text"
           id="review"
           name="review"
@@ -55,7 +58,9 @@ Commit your code to a public github repo and supply this along with the demonstr
         >
     </form>
 
-    <h3 id="submissionConfirmed">Thank you</h3>
+    <div id="confirmMessage">
+      <h3 id="submissionConfirmed">Thank you for your feedback!</h3>
+    </div>
 
     <script>
       document.getElementById('reviewForm').addEventListener('submit', async (event) => {

@@ -7,8 +7,9 @@
 
 body {
     background-color: var(--background);
-    color: var(--mainBlue);
+    color: white;
     border: solid var(--mainBlue) 2px;
+    border-radius: 5px;
     margin: auto;
     width: 700px;
 }
@@ -18,7 +19,6 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     margin: auto;
     width: 700px;
     padding-bottom: 15px;
@@ -74,6 +74,14 @@ textarea {
     height: 100px;
 }
 
+#confirmMessage {
+    display: flex;
+    justify-content: center;
+}
+
 #submissionConfirmed {
-    display: "none";
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 30px;
+    display: none;
 }
