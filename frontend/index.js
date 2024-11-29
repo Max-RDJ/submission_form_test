@@ -3,10 +3,10 @@ function confirmSubmit() {
         console.log("Form submitted.")
         document.getElementById("submissionConfirmed").style.display = "block";
 
-        // SHOULD NOT BE CLEARING INPUTS
-        // document.getElementById("firstName").value = "";
-        // document.getElementById("lastName").value = "";
-        // document.getElementById("review").value = "";
+
+        document.getElementById("firstName").value = "";
+        document.getElementById("lastName").value = "";
+        document.getElementById("review").value = "";
         
         return true;
     } else {
