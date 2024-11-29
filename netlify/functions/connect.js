@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 
+
 exports.handler = async (event) => {
   try {
     const data = JSON.parse(event.body);
@@ -15,7 +16,7 @@ exports.handler = async (event) => {
 
     const connection = mysql.createConnection({
       host: process.env.DB_HOST,
-      user: process.env.DB_USER,
+      user: "sql7748230",
       password: process.env.DB_PASSWORD,
       database: "sql7748230",
       port: process.env.DB_PORT,
