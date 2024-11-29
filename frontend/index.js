@@ -1,4 +1,4 @@
-function confirmSubmit() {
+function confirmAndClear() {
     if (confirm('Are you sure you want to submit?') == true) {
         console.log("Form submitted.")
         document.getElementById("submissionConfirmed").style.display = "block";

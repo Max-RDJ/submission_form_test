@@ -1,6 +1,5 @@
 const mysql = require('mysql');
 
-
 exports.handler = async (event) => {
   try {
     const data = JSON.parse(event.body);
@@ -13,7 +12,6 @@ exports.handler = async (event) => {
         body: JSON.stringify({ error: "Missing input fields" }),
       };
     }
-
 
     const connection = mysql.createConnection({
       // Use environment variables on Netlify so that sensitive credentials are not available on GitHub
@@ -39,7 +37,7 @@ exports.handler = async (event) => {
         }
       );
     });
-    
+
   } catch (error) {
     console.error("Handler error:", error)
     return { 

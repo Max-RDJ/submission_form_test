@@ -22,7 +22,7 @@ Commit your code to a public github repo and supply this along with the demonstr
       <h2>Please enter your name and leave a comment</h2>
     </header>
 
-    <form id="reviewForm" onSubmit="confirmSubmit()">
+    <form id="reviewForm">
         <label for="firstName">First name:</label>
         <input
           required
@@ -62,6 +62,8 @@ Commit your code to a public github repo and supply this along with the demonstr
       <h3 id="submissionConfirmed">Thank you for your feedback!</h3>
     </div>
 
+    <script src="index.js"></script>
+
     <script>
       document.getElementById('reviewForm').addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -85,9 +87,9 @@ Commit your code to a public github repo and supply this along with the demonstr
     
         const result = await response.json();
         console.log(result);
+        confirmAndClear();
       });
     </script>
 
-    <script src="index.js"></script>
   </body>
 </html>
