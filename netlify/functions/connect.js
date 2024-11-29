@@ -5,6 +5,7 @@ exports.handler = async (event) => {
   try {
     const data = JSON.parse(event.body);
 
+    // Catch empty form submissions
     if (!data.firstName || !data.lastName || !data.review) {
       console.error("Missing input fields:", data);
       return {
@@ -15,6 +16,7 @@ exports.handler = async (event) => {
 
 
     const connection = mysql.createConnection({
+      // Use environment variables on Netlify so that sensitive credentials are not available on GitHub
       host: process.env.DB_HOST,
       user: "sql7748230",
       password: process.env.DB_PASSWORD,
@@ -34,10 +36,10 @@ exports.handler = async (event) => {
             console.log("Insert successful")
             resolve({ statusCode: 200, body: JSON.stringify({ message: "Review submitted successfully" }) });
           }
-          // connection.end();
         }
       );
     });
+    
   } catch (error) {
     console.error("Handler error:", error)
     return { 
