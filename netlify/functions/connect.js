@@ -5,11 +5,11 @@ exports.handler = async (event) => {
     const { firstName, lastName, review } = JSON.parse(event.body);
 
     const connection = mysql.createConnection({
-      host: "sql7.freesqldatabase.com",
-      user: "sql7748230",
-      password: "NdC6XG8Ly8",
-      database: "sql7748230",
-      port: "3306",
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
+      port: process.env.DB_PORT,
     });
 
     return new Promise((resolve, reject) => {

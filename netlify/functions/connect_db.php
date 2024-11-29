@@ -3,7 +3,7 @@
     $lastName = $_POST['lastName'];
     $review = $_POST['review'];
 
-    $conn = new mysqli('sql7.freesqldatabase.com', 'sql7748230', 'NdC6XG8Ly8', 'name_and_review', '3306');
+    $conn = new mysqli();
     if($conn->connect_error) {
         die('Connection Failed : '.$conn->connect_erorr);
     } else {
