@@ -72,6 +72,8 @@ Commit your code to a public github repo and supply this along with the demonstr
           lastName: formData.get('lastName'),
           review: formData.get('review')
         };
+
+        console.log("Form data:", data)
     
         const response = await fetch('/.netlify/functions/connect', {
           method: 'POST',

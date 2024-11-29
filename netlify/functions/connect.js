@@ -4,11 +4,20 @@ exports.handler = async (event) => {
   try {
     const data = JSON.parse(event.body);
 
+    if (!data.firstName || !data.lastName || !data.review) {
+      console.error("Missing input fields:", data);
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Missing input fields" }),
+      };
+    }
+
+
     const connection = mysql.createConnection({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      database: "sql7748230",
       port: process.env.DB_PORT,
     });
 
