@@ -4,9 +4,9 @@ function confirmSubmit() {
         document.getElementById("submissionConfirmed").style.display = "block";
 
 
-        document.getElementById("firstName").value = "";
-        document.getElementById("lastName").value = "";
-        document.getElementById("review").value = "";
+        // document.getElementById("firstName").value = "";
+        // document.getElementById("lastName").value = "";
+        // document.getElementById("review").value = "";
         
         return true;
     } else {
