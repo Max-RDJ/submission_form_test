@@ -105,7 +105,7 @@ document.getElementById("submit-btn").addEventListener("click", (e) => {
 
     console.log(`Total words: ${totalWords}, Total spam words: ${totalSpamWords}`);
 
-    if (totalSpamWords > 0 && totalSpamWords / totalWords >= 0.25) {
+    if (totalSpamWords > 0 && totalSpamWords / totalWords >= 0.1) {
         if (!review.value.includes("[Potential spam]: ")) {
         review.value = "[Potential spam]: " + review.value;
         console.log(review.value);
