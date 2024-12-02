@@ -6,6 +6,7 @@ const review = document.getElementById("review");
 
 const spamKeywords = [
     "free",
+    "purchase",
     "win",
     "winner",
     "prize",
@@ -52,13 +53,13 @@ const spamKeywords = [
     "low cost",
     "save big",
     "work from home",
-    "double your",
+    "double",
     "guaranteed",
     "refund",
     "pre-approved",
     "no fees",
     "as seen on",
-    "limited supply",
+    "limited",
     "big deal",
     "lowest price",
     "unsubscribe",
@@ -74,13 +75,23 @@ const spamKeywords = [
     "invest",
     "fund",
     "rebate",
-    "com"
+    "com",
+    "paypal",
+    "western union",
+    "claim",
+    "ups",
+    "remuneration",
+    "malware",
+    "porn",
+    "package",
+    "deliver",
+    "evri",
+    "registration",
+    "fee",
+    "card"
   ];
-// Currently, this filter only compares each word in the submitted form with the elements in the spamKeywords array and not whole phrases.
 
-// function getWordCount(str) {
-//     return str.trim().split(/\s+/).length;
-// }
+// Currently, this filter only compares each word in the submitted form with the elements in the spamKeywords array and not whole phrases.
 
 function compareKeywords(words, spamKeywords) {
     let spamCount = 0;
@@ -91,22 +102,6 @@ function compareKeywords(words, spamKeywords) {
     });
     return spamCount;
 }
-
-// Clear inputs after user submits form
-// function confirmAndClear() {
-//     if (confirm('Are you sure you want to submit?') == true) {
-//         console.log("Form submitted.")
-//         document.getElementById("submissionConfirmed").style.display = "block";
-        
-//         firstName.value = "";
-//         lastName.value = "";
-//         review.value = "";
-  
-//         return true;
-//     } else {
-//         return false;
-//     }
-//   }
 
 document.getElementById("submit-btn").addEventListener("click", (e) => {
     const firstNameWords = firstName.value.trim().split(/\s+/);
@@ -126,10 +121,10 @@ document.getElementById("submit-btn").addEventListener("click", (e) => {
         if (!review.value.includes("[Potential spam]: ")) {
         review.value = "[Potential spam]: " + review.value;
         console.log(review.value);
-        // Depending on the purpose of this form, we could prevent the form being submitted entirely
+        // This is not an ideal solution partly because when the user writes a potentially spammy message and, when asked to confirm the submission of the form, cancels their submission to amend their message, "[Potential spam]: " is added to the textarea.
+        // Depending on the purpose of this form, perhaps we'd want a boolean isSpam variable and a corresponding column in the database or we could prevent the form being submitted entirely.
         }
     }
-    // confirmAndClear();
-})
+});
 
 
