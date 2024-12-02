@@ -30,6 +30,7 @@ Commit your code to a public github repo and supply this along with the demonstr
           id="firstName"
           name="firstName"
           placeholder="John"
+          maxlength="20"
         />
         <br>
 
@@ -40,6 +41,7 @@ Commit your code to a public github repo and supply this along with the demonstr
           id="lastName"
           name="lastName"
           placeholder="Doe"
+          maxlength="20"
         />
         <br>
 
@@ -50,8 +52,9 @@ Commit your code to a public github repo and supply this along with the demonstr
           id="review"
           name="review"
           placeholder="Tell us about your experience"
+          maxlength="500"
           ></textarea>
-
+          <p id="remaining-chars"></p>
         <input
           type="submit"
           id="submit-btn"

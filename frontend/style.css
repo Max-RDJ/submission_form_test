@@ -69,11 +69,15 @@ textarea {
     min-width: 400px;
 }
 
+#remaining-chars {
+    font-size: 16px;
+}
+
 #submit-btn {
     width: 15rem;
     background-color: var(--mainBlue);
     color: var(--offwhite);
-    margin: 15px;
+    margin: 25px;
     border-radius: 10px;
     height: 2.5rem;
     font-size: 1em;

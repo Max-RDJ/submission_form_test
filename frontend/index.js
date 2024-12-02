@@ -126,6 +126,16 @@ function compareKeywords(words, spamKeywords) {
     return spamCount;
 }
 
+let charLimit = 500;
+function updateValue(e) {
+    console.log(review.value.length)
+    let reviewChars = review.value.length;
+    remainingChars = charLimit - reviewChars;
+    document.getElementById("remaining-chars").innerHTML = `${remainingChars} characters remaining`
+}
+
+review.addEventListener("input", updateValue);
+
 document.getElementById("submit-btn").addEventListener("click", (e) => {
     const firstNameWords = firstName.value.trim().split(/\s+/);
     const lastNameWords = lastName.value.trim().split(/\s+/);
