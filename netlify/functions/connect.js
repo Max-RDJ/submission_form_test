@@ -1,5 +1,7 @@
 const mysql = require('mysql');
 
+
+
 exports.handler = async (event) => {
   try {
     const data = JSON.parse(event.body);
