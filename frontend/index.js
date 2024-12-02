@@ -73,7 +73,8 @@ const spamKeywords = [
     "cryptocurrency",
     "invest",
     "fund",
-    "rebate"
+    "rebate",
+    "com"
   ];
 // Currently, this filter only compares each word in the submitted form with the elements in the spamKeywords array and not whole phrases.
 
@@ -108,8 +109,6 @@ function compareKeywords(words, spamKeywords) {
 //   }
 
 document.getElementById("submit-btn").addEventListener("click", (e) => {
-    e.preventDefault();
-
     const firstNameWords = firstName.value.trim().split(/\s+/);
     const lastNameWords = lastName.value.trim().split(/\s+/);
     const reviewWords = review.value.trim().split(/\s+/);
