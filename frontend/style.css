@@ -1,5 +1,6 @@
 :root {
     --mainBlue: #4d7caf;
+    --darkerBlue: #273e57;
     --background: #484848;
     --offwhite: rgb(238, 238, 238);
     font-family: 'Outfit', 'Arial';
@@ -34,6 +35,8 @@ h1 {
 
 h2 {
     font-weight: 500;
+    margin-inline: 30px;
+    text-align: center;
 }
 
 form {
@@ -77,6 +80,16 @@ textarea {
     font-family: 'Outfit', 'Arial';
 }
 
+#submit-btn:hover {
+    background-color: var(--darkerBlue);
+    cursor: pointer;
+}
+
+#submit-btn:active {
+    background-color: var(--offwhite);
+    color: var(--mainBlue);
+}
+
 #review {
     width: 15rem;
     height: 100px;
@@ -92,4 +105,10 @@ textarea {
     font-size: 25px;
     margin-bottom: 30px;
     display: none;
+}
+
+@media only screen and (width <= 750px) {
+    header {width: 400px}
+    body {width: 400px}
+    textarea {min-width: 300px}
 }
