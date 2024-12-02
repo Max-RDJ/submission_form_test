@@ -79,9 +79,11 @@ Commit your code to a public github repo and supply this along with the demonstr
             review: formData.get('review')
           };
 
-          document.getElementById('firstName').value = "";
-                document.getElementById('lastName').value = "";
-                document.getElementById('review').value = "";
+        document.getElementById('firstName').value = "";
+        document.getElementById('lastName').value = "";
+        document.getElementById('review').value = "";
+        document.getElementById("submissionConfirmed").style.display = "block";
+        document.getElementById("remaining-chars").innerHTML = "";
 
         console.log("Form data:", data)
     
@@ -99,9 +101,7 @@ Commit your code to a public github repo and supply this along with the demonstr
 
             if (response.ok) {
                 console.log("Form submitted successfully.");
-                document.getElementById("submissionConfirmed").style.display = "block";
 
-                
             } else {
                 console.error("Error submitting form:", result.error || "Unknown error");
                 alert("There was an error submitting the form. Please try again.");
