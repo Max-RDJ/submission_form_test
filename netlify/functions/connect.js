@@ -1,6 +1,19 @@
 const mysql = require('mysql');
 
+function confirmAndClear() {
+  if (confirm('Are you sure you want to submit?') == true) {
+      console.log("Form submitted.")
+      document.getElementById("submissionConfirmed").style.display = "block";
+      
+      firstName.value = "";
+      lastName.value = "";
+      review.value = "";
 
+      return true;
+  } else {
+      return false;
+  }
+}
 
 exports.handler = async (event) => {
   try {
@@ -35,6 +48,7 @@ exports.handler = async (event) => {
           } else {
             console.log("Insert successful")
             resolve({ statusCode: 200, body: JSON.stringify({ message: "Review submitted successfully" }) });
+            confirmAndClear();
           }
         }
       );

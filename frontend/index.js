@@ -91,6 +91,22 @@ function compareKeywords(words, spamKeywords) {
     return spamCount;
 }
 
+// Clear inputs after user submits form
+function confirmAndClear() {
+    if (confirm('Are you sure you want to submit?') == true) {
+        console.log("Form submitted.")
+        document.getElementById("submissionConfirmed").style.display = "block";
+        
+        firstName.value = "";
+        lastName.value = "";
+        review.value = "";
+
+        return true;
+    } else {
+        return false;
+    }
+}
+
 document.getElementById("submit-btn").addEventListener("click", (e) => {
     const firstNameWords = firstName.value.trim().split(/\s+/);
     const lastNameWords = lastName.value.trim().split(/\s+/);
@@ -116,18 +132,3 @@ document.getElementById("submit-btn").addEventListener("click", (e) => {
 })
 
 
-// Clear inputs after user submits form
-function confirmAndClear() {
-    if (confirm('Are you sure you want to submit?') == true) {
-        console.log("Form submitted.")
-        document.getElementById("submissionConfirmed").style.display = "block";
-        
-        firstName.value = "";
-        lastName.value = "";
-        review.value = "";
-
-        return true;
-    } else {
-        return false;
-    }
-}
