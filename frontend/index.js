@@ -92,22 +92,24 @@ function compareKeywords(words, spamKeywords) {
 }
 
 // Clear inputs after user submits form
-function confirmAndClear() {
-    if (confirm('Are you sure you want to submit?') == true) {
-        console.log("Form submitted.")
-        document.getElementById("submissionConfirmed").style.display = "block";
+// function confirmAndClear() {
+//     if (confirm('Are you sure you want to submit?') == true) {
+//         console.log("Form submitted.")
+//         document.getElementById("submissionConfirmed").style.display = "block";
         
-        firstName.value = "";
-        lastName.value = "";
-        review.value = "";
-
-        return true;
-    } else {
-        return false;
-    }
-}
+//         firstName.value = "";
+//         lastName.value = "";
+//         review.value = "";
+  
+//         return true;
+//     } else {
+//         return false;
+//     }
+//   }
 
 document.getElementById("submit-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+
     const firstNameWords = firstName.value.trim().split(/\s+/);
     const lastNameWords = lastName.value.trim().split(/\s+/);
     const reviewWords = review.value.trim().split(/\s+/);
@@ -128,7 +130,7 @@ document.getElementById("submit-btn").addEventListener("click", (e) => {
         // Depending on the purpose of this form, we could prevent the form being submitted entirely
         }
     }
-    confirmAndClear();
+    // confirmAndClear();
 })
 
 
