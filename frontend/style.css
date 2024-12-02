@@ -1,13 +1,13 @@
 :root {
-    --mainBlue: #5a7590;
-    --background: #3b3b3b;
-    --white: white;
+    --mainBlue: #4d7caf;
+    --background: #484848;
+    --offwhite: rgb(238, 238, 238);
     font-family: 'Outfit', 'Arial';
 }
 
 body {
     background-color: var(--background);
-    color: white;
+    color: var(--offwhite);
     border: solid var(--mainBlue) 2px;
     border-radius: 5px;
     margin: auto;
@@ -24,8 +24,16 @@ header {
     padding-bottom: 15px;
     margin-bottom: 30px;
     border-bottom: solid var(--mainBlue) 1px;
-    color: white;
+    color: var(--offwhite);
     background-color: var(--mainBlue);
+}
+
+h1 {
+    font-size: 46px;
+}
+
+h2 {
+    font-weight: 500;
 }
 
 form {
@@ -39,7 +47,7 @@ form {
 
 label {
     margin-bottom: 10px;
-    color: white;
+    color: var(--offwhite);
 }
 
 input {
@@ -61,7 +69,7 @@ textarea {
 #submit-btn {
     width: 15rem;
     background-color: var(--mainBlue);
-    color: white;
+    color: var(--offwhite);
     margin: 15px;
     border-radius: 10px;
     height: 2.5rem;

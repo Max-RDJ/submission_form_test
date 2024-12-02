@@ -88,7 +88,30 @@ const spamKeywords = [
     "evri",
     "registration",
     "fee",
-    "card"
+    "fees",
+    "card",
+    "funds",
+    "qualify",
+    "qualifies",
+    "details",
+    "IRS",
+    "bank",
+    "call",
+    "email",
+    "balance",
+    "outstanding",
+    "debit",
+    "unlock",
+    "once-in-a-lifetime",
+    "opportunity",
+    "ship",
+    "shipping",
+    "account",
+    "compromised",
+    "username",
+    "password",
+    "address",
+    "expiration"
   ];
 
 // Currently, this filter only compares each word in the submitted form with the elements in the spamKeywords array and not whole phrases.
@@ -117,7 +140,7 @@ document.getElementById("submit-btn").addEventListener("click", (e) => {
 
     console.log(`Total words: ${totalWords}, Total spam words: ${totalSpamWords}`);
 
-    if (totalSpamWords > 0 && totalSpamWords / totalWords >= 0.1) {
+    if (totalSpamWords > 0 && totalSpamWords / totalWords >= 0.2) {
         if (!review.value.includes("[Potential spam]: ")) {
         review.value = "[Potential spam]: " + review.value;
         console.log(review.value);
